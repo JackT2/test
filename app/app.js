@@ -4,15 +4,17 @@
 angular.module('myApp', [
     'myApp.config',
     'myApp.security',
-    'myApp.home',
-    'myApp.account',
-    'myApp.chat',
+    'myApp.todo',
     'myApp.login'
   ])
-
+  
+  
+  
   .run(['$rootScope', 'Auth', function($rootScope, Auth) {
     // track status of authentication
     Auth.$onAuth(function(user) {
       $rootScope.loggedIn = !!user;
     });
   }]);
+  
+ 

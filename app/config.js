@@ -8,10 +8,10 @@ angular.module('myApp.config', [])
   .constant('version', '1.0.0')
 
   // where to redirect users if they need to authenticate (see security.js)
-  .constant('loginRedirectPath', '/login')
+  .constant('loginRedirectPath', 'login')
 
   // your Firebase data URL goes here, no trailing slash
-  .constant('FBURL', 'https://angularfire-seed-dev.firebaseio.com')
+  .constant('FBURL', 'https://subtask-v1.firebaseio.com')
 
   // double check that the app has been configured before running it and blowing up space and time
   .run(['FBURL', '$timeout', function(FBURL, $timeout) {

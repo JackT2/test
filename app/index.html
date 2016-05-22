@@ -1,53 +1,253 @@
 <!doctype html>
-<html lang="en" ng-app="myApp">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html lang="en"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
-  <link rel="stylesheet" href="app.css"/>
-  <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Subtask - Your Simple, Free To-Do Lists</title>
+	<meta name="description" content="Start making lists with Subtask, a new completly free and responive to-do list">
+	<meta name="keywords" content="productivity, free, subtask, subtask.co, subtask.com, task, todo, todo list, list, free lists, angularjs, firebase,">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+	<script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
-<body ng-cloak>
+<body>
+<!--[if lt IE 8]><p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please 
+	<a href="http://browsehappy.com/">upgrade your browser</a> 
+to improve your experience.</p><![endif]-->
+<nav class="navbar-2" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+	        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-click" aria-expanded="false" aria-controls="navbar">
+	        	<span class="sr-only">Toggle navigation</span>
+	        	<span class="icon-bar header-icon"></span>
+	        	<span class="icon-bar header-icon"></span>
+            	<span class="icon-bar header-icon"></span>
+	        </button>
+	        <a class="navbar-brand-header navbar-brand" href=".">
+				<svg class="svg-logo" width="54" height="40">
+					<image xlink:href="img/logo-header.svg" src="img/header-nav-logo.png" width="54" height="40" />
+				</svg>
+				<p class="logo-header">Subtask<p>
+			</a>
+        </div>
+        <div class="navbar-collapse collapse navbar-right navbar-click">
+        	<a class="navlink navlink-active" href=".">Home</a>
+			<a class="navlink" href="about/">About</a>
+			<a class="navlink" href="subtask/">Subtask</a>
+        </div><!--/.navbar-collapse -->
+    </div>
+</nav>
 
-  <ul class="menu">
-    <li><a href="#/home">home</a></li>
-    <li><a href="#/chat">chat</a></li>
-    <li ng-hide="loggedIn"><a href="#/login">login</a></li>
-    <li ng-show="loggedIn"><a href="#/account">account</a></li>
-  </ul>
+    <div class="full-width ">
+	    <div class="container">
+			<div class="row">
+		        <div class="col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4 col-lg-offset-4 col-lg-4 header-content">
+		        	<svg class="header-logo">
+						<image class="big-logo" xlink:href="img/header-logo2.svg" src="img/header-logo.png" width="170" height="120" />
+					</svg>
+		        	<h1>Subtask</h1>
+					<a class="btn-subtask center-block" href="subtask/">Start Completing Tasks</a>
+					<p class="text-header text-center hidden-xs">or</p>
+					<a href="subtask/#/login/" class="link-header center-block hidden-xs">Sign Up</a>
+		        </div>
+		    </div>
+	    </div>
+    </div>
+    
+    <nav class="navbar nav-home" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-click" aria-expanded="false" aria-controls="navbar">
+				    <span class="sr-only">Toggle navigation</span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href=".">
+					<svg class="svg-logo" width="54" height="40">
+						<image xlink:href="img/nav-logo.svg" src="img/nav-logo.png" width="54" height="40" />
+					</svg>
+					<p class="logo-text">Subtask<p>
+				</a>
+			</div>
+			<div class="navbar-collapse collapse navbar-right navbar-click">
+				<a class="navlink navlink-active" href=".">Home</a>
+				<a class="navlink" href="about/">About</a>
+				<a class="navlink" href="subtask/">Subtask</a>
+			</div><!--/.navbar-collapse -->
+		</div>
+    </nav>
+    
+    
+    <div class="container content">
+		<div class="row">
+			<div class="col-md-offset-4 col-md-4">
+				<h2>Subtask</h2>
+				<h3>Your Simple, Free, Todo Lists</h3>
+        	</div>
+		</div>
+		<div class="row">
+				<div class="main-image col-sm-12 ">
+        		</div>
+			</div>
+		<div class="row">
+	        <div class="info-box col-xs-6 col-sm-4 col-md-3">
+		        <div class="icon center-block">
+			        <svg class="svg-logo" width="32" height="32">
+						<image xlink:href="img/icon/free.svg" src="img/icon/free.png" width="32" height="32" />
+					</svg>
+		        </div>
+		        <h4>Free To Use For Everyone</h4>
+				<p>No sign up or subscription fees, just log in and start making lists.</p>
+	        </div>
+	        <div class="info-box col-xs-6 col-sm-4 col-md-3">
+		        <a class="popoverData" data-content="Feature coming soon!" rel="popover" data-placement="top" data-trigger="hover">
+			        <div class="icon center-block info-disabled">
+				        <svg class="svg-logo" width="32" height="32">
+							<image xlink:href="img/icon/share.svg" src="img/icon/share.png" width="32" height="32" />
+						</svg>
+			        </div>
+			        <h4 class="info-disabled">Collaborate On Lists</h4>
+					<p class="info-disabled">Share your lists with everyone.</p>
+		        </a>
+	        </div>
 
-  <div ng-view></div>
+			
+	        <div class="info-box col-xs-6 col-sm-4 col-md-3">
+		        <a class="popoverData" data-content="Feature coming soon!" rel="popover" data-placement="top" data-trigger="hover">
+			        <div class="icon center-block info-disabled">
+				        <svg class="svg-logo" width="32" height="32">
+							<image xlink:href="img/icon/comment.svg" src="img/icon/comment.png" width="32" height="32" />
+						</svg>
+			        </div>
+			        <h4 class="info-disabled">Comments</h4>
+					<p class="info-disabled">Add a little bit extra information to your tasks.</p>
+				</a>
+	        </div>
+	        <div class="info-box col-xs-6 col-sm-4 col-md-3">
+		        <div class="icon center-block">
+			        <svg class="svg-logo" width="32" height="32">
+						<image xlink:href="img/icon/devices.svg" src="img/icon/devices.png" width="32" height="32" />
+					</svg>
+		        </div>
+		        <h4>On All Your Devices</h4>
+				<p>The app responds for all of your devices, so you have your lists with you.</p>
+	        </div>
+	        <div class="info-box col-xs-6 col-sm-4 col-md-3">
+		        <a class="popoverData" data-content="Feature coming soon!" rel="popover" data-placement="top" data-trigger="hover">
+			        <div class="icon center-block info-disabled">
+				        <svg class="svg-logo" width="32" height="32">
+							<image xlink:href="img/icon/projects.svg" src="img/icon/projects.png" width="32" height="32" />
+						</svg>
+			        </div>
+			        <h4 class="info-disabled">Projects</h4>
+					<p class="info-disabled">Keep your lists organised by project.</p>
+				</a>
+	        </div>
+	        <div class="info-box col-xs-6 col-sm-4 col-md-3">
+		        <a class="popoverData" data-content="Feature coming soon!" rel="popover" data-placement="top" data-trigger="hover">
+			        <div class="icon center-block info-disabled">
+				        <svg class="svg-logo" width="32" height="32">
+							<image xlink:href="img/icon/time.svg" src="img/icon/time.png" width="32" height="32" />
+						</svg>
+			        </div>
+			        <h4 class="info-disabled">Due Dates</h4>
+					<p class="info-disabled">Make sure you get your tasks done before the deadline.</p>
+		        </a>
+	        </div>
+	        <div class="info-box col-xs-6 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-0">
+				<div class="icon center-block">
+					<svg class="svg-logo" width="32" height="32">
+						<image xlink:href="img/icon/list.svg" src="img/icon/list.png" width="32" height="32" />
+					</svg>
+				</div>
+		        <h4>List Everything</h4>
+				<p>If you can think of it, it can be listed.</p>
+	        </div>
+	        <div class="info-box col-xs-6 col-sm-4 col-md-3">
+		        <div class="icon center-block">
+			        <svg class="svg-logo" width="32" height="32">
+						<image xlink:href="img/icon/layout.svg" src="img/icon/layout.png" width="32" height="32" />
+					</svg>
+		        </div>
+		        <h4>Simple Design</h4>
+				<p>No unnecessary information or clutter.</p>
+	        </div>
+		</div>  
+		<div class="row">
+			<div class="col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2">
+				<p class="text-signup">Start making lists now</p>
+				<a href="subtask/" class="btn-signup center-block">Subtask</a>
+        	</div>
+		</div>
+	</div> <!-- /container -->        
+    <footer>
+	    <div class="container">
+	    	<div class="row">
+				<div class="col-sm-6 ">
+					<p class="text-footer navbar-left">&copy; Subtask 2015 <span class="dont-steal">- Please dont steal</span></p>
+        		</div>
+				<div class="col-sm-6 ">
+					<div class="sitemap-footer navbar-right">
+						<a href=".">Home</a>  |  
+						<a href="about/">About</a>  |  
+						<a href="subtask/">Subtask</a>  |  
+						<button type="button" 
+								class="pop btn-no-style" 
+								data-container="body" 
+								data-toggle="popover" 
+								data-placement="top"
+								data-original-title="" 
+								title="">
+								Share
+						</button>
+						<div class="pop_content" id="popover_content" style="display: none">
+							<div class='fb-share-button' data-href='http://Subtask.co/' data-layout='button'></div>
+							<a href='https://twitter.com/share' class='twitter-share-button' data-url='http://subtask.co/' data-text='Another to-do list app? Great' data-count='none' data-hashtags='Subtask'>Tweet</a>
+							<div class="g-plusone" data-size="medium" data-annotation="none" data-href="http://subtask.co"></div>
+						</div>
+        			</div>
+        		</div>
+			</div>
+	    </div>
+    </footer>		  	  
 
-  <div>AngularFire-seed v<span app-version></span></div>
-
-  <!-- In production use:
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.x/angular.min.js"></script>
-<script src="//cdn.firebase.com/js/client/2.2.x/firebase.js"></script>
-<script src="//cdn.firebase.com/libs/angularfire/1.0.x/angularfire.min.js"></script>
--->
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="bower_components/firebase/firebase.js"></script>
-  <script src="bower_components/angularfire/dist/angularfire.js"></script>
-
-
-  <script src="app.js"></script>
-  <script src="config.js"></script>
-
-  <script src="components/appversion/appversion-directive.js"></script>
-  <script src="components/auth/auth.js"></script>
-  <script src="components/firebase.utils/firebase.utils.js"></script>
-  <script src="components/ngcloak/ngcloak-decorator.js"></script>
-  <script src="components/reverse/reverse-filter.js"></script>
-  <script src="components/security/security.js"></script>
-
-  <script src="home/home.js"></script>
-  <script src="account/account.js"></script>
-  <script src="chat/chat.js"></script>
-  <script src="login/login.js"></script>
+	<!-- Google Plus  -->
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<!-- Twitter Share -->
+	<script>
+		!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+	</script>
+	<!-- Facebook Share -->
+	<script>
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.3&appId=975066172527243";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+  	<!-- jQuery Code -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+	<script src="js/vendor/bootstrap.min.js"></script>
+	<script src="js/main.js"></script>
+	
+    <!-- Google Analytics -->
+    <script>
+        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        e.src='//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+        ga('create','UA-62802250-1','auto');ga('send','pageview');
+    </script>
 </body>
 </html>
